@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/SpaceInvaders/Menu.unity
+    guid: 7715fe2a6f9e640d0acb29840a93ac43
+  - enabled: 1
+    path: Assets/SpaceInvaders/SpaceInvaders.unity
+    guid: 4896046b07bda40a28fb94a9ccdcb37a
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_UseUCBPForAssetBundles: 0
