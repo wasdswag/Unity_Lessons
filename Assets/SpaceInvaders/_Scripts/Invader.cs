@@ -1,6 +1,5 @@
 
 using UnityEngine;
-
 public class Invader : MonoBehaviour
 {
     public int RowIndex { get; private set; }
