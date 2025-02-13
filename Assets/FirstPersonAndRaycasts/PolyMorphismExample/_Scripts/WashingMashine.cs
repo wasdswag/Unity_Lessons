@@ -6,6 +6,10 @@ public class WashingMashine : Device
     [SerializeField] private float shakeFrequency;
     [SerializeField] private float shakeAmplitude;
 
+    
+    private MeshRenderer _look;
+    private const string EMISSION_KEY = "_EMISSION";
+
 
     protected override void TogglePower()
     {

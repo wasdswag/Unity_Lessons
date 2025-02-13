@@ -109,7 +109,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _CubeColor: {r: 0.29411763, g: 0.29411763, b: 0.29411763, a: 1}
     - _DiffColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _EmissionColor: {r: 0, g: 0.13839523, b: 0.14559242, a: 1}
     - _HighSpecColor: {r: 1, g: 1, b: 1, a: 1}
     - _IllumColor: {r: 0, g: 0, b: 0, a: 1}
     - _LowSpecColor: {r: 0.07352942, g: 0.07352942, b: 0.07352942, a: 1}

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class Microwave : Device
     [SerializeField] private float plateRotationSpeed = 15f;
 
 
+ 
     protected override void TogglePower()
     {
         base.TogglePower();

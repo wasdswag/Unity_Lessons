@@ -9,21 +9,60 @@ public class RaycastInteractor : MonoBehaviour
     private Ray _ray;
     private RaycastHit _hit;
 
+
+    private IClickable previousClickable; 
+    private IClickable currentClickable;
+
     private void Update()
     {
         _ray = playerCamera.ScreenPointToRay(new Vector3(Screen.width * 0.5f, Screen.height * 0.5f,
             playerCamera.nearClipPlane));
 
-        if (Physics.Raycast(_ray, out _hit, rayLength, raycastLayers))
+        bool hasHit = Physics.Raycast(_ray, out _hit, rayLength, raycastLayers); 
+
+        if (hasHit && _hit.collider.TryGetComponent(out IClickable clickable))
         {
+            previousClickable = currentClickable;
+            currentClickable = clickable;
+            
+            // highLight
+            if (currentClickable != previousClickable)
+            {
+                HighlightObject(ref currentClickable);
+                DeselectObject(ref previousClickable);
+            }
+
+            // LMB ЛКМ     
             if (Input.GetMouseButtonDown(0))
             {
-                if (_hit.collider.TryGetComponent(out IClickable clickable))
-                {
-                    clickable.OnClick();
-                }
+                currentClickable.OnClick();
             }
 
         }
+         // когда луч обрывается  
+        else 
+        {
+            DeselectObject(ref currentClickable);
+            DeselectObject(ref previousClickable);
+        }
     }
+
+
+    private void DeselectObject(ref IClickable clickable)
+    {
+        if (clickable != null)
+        {
+            clickable.OnFocusExit();
+            clickable = null;
+        }
+    }
+
+    private void HighlightObject(ref IClickable clickable)
+    {
+        if (clickable != null)
+            clickable.OnFocusEnter();
+    }
+
+
+    
 }
